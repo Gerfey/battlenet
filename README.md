@@ -13,7 +13,7 @@ the following command to install the package and add it as a requirement to your
 project's `composer.json`:
 
 ```bash
-composer require gerfey/battlenet
+composer require gerfey/battlenet @dev
 ```
 
 ## Usage
