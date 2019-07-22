@@ -48,7 +48,7 @@ class BattleNetClient extends HttpClient
      * @param array $options
      * @return mixed|void
      */
-    public function createRequest(string $method = 'GET', string $uri = '', array $options = []) : BattleNetResponseInterface
+    public function createRequest(string $method = 'GET', string $uri = '', array $options = []): BattleNetResponseInterface
     {
         try {
             $this->response = $this->client->request($method, $uri, $this->getQueryOptions($options));
@@ -76,6 +76,8 @@ class BattleNetClient extends HttpClient
     {
         if (in_array($namespace, ['static', 'dynamic', 'profile'])) {
             $this->namespace = $namespace . '-' . $this->region->getLocale()->getRegion();
+        } elseif ($namespace == 'prod') {
+            $this->namespace = 'prod';
         } else {
             $this->namespace = 'dynamic' . '-' . $this->region->getLocale()->getRegion();
         }
