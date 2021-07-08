@@ -19,7 +19,7 @@ class Request implements RequestInterface
     public function __construct(HttpClientInterface $client)
     {
         $this->client = $client;
-        $this->setNamespace();
+        $this->setNamespace('dynamic');
     }
 
     /**
